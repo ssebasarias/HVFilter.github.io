@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la búsqueda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .mensaje {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .resultado {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resultados de la búsqueda</h2>
+        <p class="mensaje">{{ mensaje }}</p>
+        
+        <ul>
+            {% for resultado in resultados %}
+            <li class="resultado">{{ resultado }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('descargar_archivo', filename='archivos_filtrados.zip') }}">Descargar archivos con la palabra encontrada</a>
+    </div>
+    <a href="/">Volver</a>
+</body>
+</html>
