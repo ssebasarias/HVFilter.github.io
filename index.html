@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Palabras en Múltiples PDFs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Buscar Palabras en Múltiples PDFs</h1>
+    <div id="form-container">
+        <input type="file" id="fileInput" accept="application/pdf" webkitdirectory multiple hidden>
+        <div id="dropzone">Arrastra y suelta la carpeta aquí o haz clic para seleccionar archivos</div>
+        <p id="fileCount">0 archivos seleccionados</p>
+        <input type="text" id="searchInput" placeholder="Palabras a buscar (separadas por comas)">
+        <button id="searchButton" onclick="searchWords()">Buscar</button>
+        <button onclick="downloadZip()">Descargar ZIP</button>
+    </div>
+    <div id="results-container">
+        <div id="results"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
